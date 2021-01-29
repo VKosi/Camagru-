@@ -88,10 +88,6 @@
 ```diff
 # ensuring that the message is available to the next page that is to be rendered.
 ```
-  
-<hr />
-
-<h2>Back-End NPM Packages :package:</h2> 
 
   <ul>
    <li>
@@ -101,7 +97,9 @@
         </strong>
        </em>
     </li>
-    
+
+<hr />
+
 ```diff
 # password hashing, encryption and decryption
 ```
