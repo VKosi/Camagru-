@@ -68,32 +68,32 @@
     <li>
       <em>
         <strong>
-          Index.php . for entry point
+          Index.php . 
         </strong>
        </em>
     </li>
     
 ```diff
-# enables real-time, bidirectional and event-based communication between the browser and the server
+# for entry point
 ```
     
    <li>
       <em>
         <strong>
-          config/setup.php . automatic setup file for all database and folder requirements
+          config/setup.php . 
         </strong>
        </em>
     </li>
     
 ```diff
-# ensuring that the message is available to the next page that is to be rendered.
+# automatic setup file for all database and folder requirements
 ```
 
   <ul>
    <li>
       <em>
         <strong>
-          config/database.php . Database configuration files in order to create and populate databases in a secure way
+          config/database.php . 
         </strong>
        </em>
     </li>
@@ -101,7 +101,7 @@
 <hr />
 
 ```diff
-# password hashing, encryption and decryption
+# Database configuration files in order to create and populate databases in a secure way
 ```
 
 <h2> Project Structure </h2>
@@ -125,7 +125,7 @@
 <h3> Expected outcomes: </h3>
 
 ```diff
-+ End Points where front-end request are processed e.g inserting user to database
++
 ```
 
  - Outcomes
