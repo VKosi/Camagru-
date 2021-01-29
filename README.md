@@ -7,8 +7,8 @@
 
 <hr />
 
-<em>To get project subject:</em> [Matcha Subject!](https://github.com/wethinkcode-students/web/blob/master/2%20-%20camagru/camagru.en.pdf)<br />
-<em>To get project marking sheet:</em> [Matcha Marking Sheet!](https://github.com/wethinkcode-students/web/blob/master/2%20-%20camagru/camagru.markingsheet.pdf)
+<em>To get project subject:</em> [Camagru Subject!](https://github.com/wethinkcode-students/web/tree/master/1%20-%20camagru/camagru.en.pdf)<br />
+<em>To get project marking sheet:</em> [Camagru Marking Sheet!](https://github.com/wethinkcode-students/web/tree/master/2%20-%20camagru/camagru.markingsheet.pdf)
 
 <hr />
 
