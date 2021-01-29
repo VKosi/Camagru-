@@ -3,7 +3,7 @@ session_start();
 include 'include/webroot.php';
   
 if(isset($_POST['username'])){
-$Username = $_POST['uname'];
+$Username = $_POST['username'];
 }
 if(isset($_POST['psw-repeat'])){
 $password = sha1($_POST['psw-repeat']);
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     if ($_POST['psw'] == $_POST['psw-repeat'])
     {
-        if (preg_match("/^[a-zA-Z0-9]*$/", $Username = $_POST['uname']))
+        if (preg_match("/^[a-zA-Z0-9]*$/", $Username = $_POST['username']))
         {
             if(strlen($_POST['psw']) > 8)
             {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                         try
                         {
                             $emails = $_POST['email'];
-                            $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+                            $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 							$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 							$request = $con->prepare("SELECT Email_addy FROM users WHERE Email_addy = :Email_addy;");
                             $request->bindParam(':Email_addy', $emails);
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                             {
                                 try
                                 {
-                                    $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+                                    $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
                                     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                     $request = $con->prepare("SELECT Username FROM users WHERE Username = :name;");
                                     $request->bindParam(':name', $Username);
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                     {
                                         $confirmlink = md5( rand(0,1000) );
                                         $password = sha1($_POST['psw-repeat']);
-                                        $bdd = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+                                        $bdd = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
                                         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                         $req = $bdd->prepare('INSERT INTO users (Username, Pass_word, Email_addy, confirmlink, Comment_email) VALUES (:Username, :Pass_word, :Email_addy, :confirmlink, :Comment_email)');
                                         $req->execute(array(
@@ -97,17 +97,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                                     ------------------------
 
                                     Please click this link to activate your account:
-                                    http://localhost:8080/'.WEBROOT.'/verification.php?email='.$emails = $_POST['email'].'&confirmlink='.$confirmlink.'';
+                                    http://localhost/Camagru-/verification.php?email='.$emails = $_POST['email'].'&confirmlink='.$confirmlink.'';
 
                                     $headers = 'From:automsg@thegru.com' . "\r\n";
                                     mail($to, $subject, $message, $headers);
-                                    header( "refresh:3;url=created_success.php" );
+                                    echo("Mail Is on the Way !");
+                                    header( "refresh:1;url=created_success.php" );
                                 }
                                 else
                                 {
                                     $_SESSION['message'] ='Username already taken';
                                     echo("Username already taken");
-                                    header( "refresh:3;url=signup.php" );
+                                    header( "refresh:10;url=signup.php" );
 
                                 }
                             }
@@ -115,49 +116,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                             {
                                 $_SESSION['message'] ='Invalid email format';
                                 echo("invalid email format");
-                                header( "refresh:3;url=signup.php" );
+                                header( "refresh:10;url=signup.php" );
                             }
                         }
                         else
                         {
                             $_SESSION['message'] = 'Email already used';
                             echo("Email already used");
-                            header( "refresh:3;url=signup.php" );
+                            header( "refresh:10;url=signup.php" );
                         }
                     }
                     else
                     {
                         $_SESSION['message'] = 'Password must include at least one letter';
                         echo("Password must include at least one letter");
-                        header( "refresh:3;url=signup.php" );
+                        header( "refresh:10;url=signup.php" );
                     }
                 }
                 else
                 {
                     $_SESSION['message'] = 'Password must include at least one number';
                     echo("Password must include at least one number");
-                    header( "refresh:3;url=signup.php" );
+                    header( "refresh:10;url=signup.php" );
                 }
             }
             else
             {
                 $_SESSION['message'] = 'Password must be at least 8 characters long';
                 echo("Password must be at least 8 characters long");
-                header( "refresh:3;url=signup.php" );
+                header( "refresh:10;url=signup.php" );
             }
         }
         else
         {
             $_SESSION['message'] = 'Invalid username use only letters or numbers';
             echo("Invalid username use only letters or numbers");
-            header( "refresh:3;url=signup.php" );
+            header( "refresh:10;url=signup.php" );
         }
     }
     else
     {
         $_SESSION["message"] = "Your password must match";
         echo("Your password must match");
-        header( "refresh:3;url=signup.php" );
+        header( "refresh:10;url=signup.php" );
     }
 }
 ?>

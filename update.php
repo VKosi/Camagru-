@@ -3,7 +3,7 @@
 	if (!isset($_SESSION['LOGGED_ON']))
 		try
 		{
-			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "vuyokosi");
+			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 			$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$update = $connection->prepare("SELECT * FROM users WHERE username = :username");
 			$update->execute(array(
@@ -17,7 +17,7 @@
 		{
 			try
 			{
-				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "vuyokosi");
+				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$update = $connection->prepare("UPDATE Photos SET username = :newusername WHERE username = :username");
 				$update->execute(array(
@@ -31,7 +31,7 @@
 			}
 			try
 			{
-				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "vuyokosi");
+				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$update = $connection->prepare("UPDATE users SET username = :newusername WHERE username = :username");
 				$update->execute(array(
@@ -57,7 +57,7 @@
 		header('location:index.php');
 		try
 		{
-			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "vuyokosi");
+			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 			$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$update = $connection->prepare("SELECT * FROM users WHERE email = :newmail");
 			$update->bindParam(':newmail', $_POST['newmail']);
@@ -71,7 +71,7 @@
 		{
 		try
 		{
-			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "vuyokosi");
+			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 			$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$update = $connection->prepare("UPDATE users SET email = :newmail WHERE username = :username");
 			$update->execute(array(

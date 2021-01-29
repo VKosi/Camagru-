@@ -10,7 +10,7 @@
 		$confirmlink = $_GET['confirmlink'];
 		try
 		{
-			$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+			$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$request = $con->prepare("SELECT Email_addy, confirmlink FROM users WHERE Email_addy = :email AND confirmlink = :confirmlink AND reset_psw = '1'");
 			$request->execute(array(
@@ -40,7 +40,7 @@
             try
             {
                 $password = sha1($_POST['password']);
-                $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+                $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$update = $con->prepare("UPDATE users SET reset_psw = '0', confirmlink = NULL, Pass_word = :Pasword WHERE Email_addy = :email AND confirmlink = :confirmlink AND verified = '1' AND reset_psw = '1'");
 				$update->execute(array(

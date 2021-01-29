@@ -1,0 +1,58 @@
+.likencomment
+{
+	width: 14vw;
+	top: -8vw;
+	position: relative;
+	height: 2vw;
+	margin: 0 0 0 1vw;
+	z-index: 2;
+}
+
+.delbutton
+{
+	position: relative;
+	top : -7.2vw;
+	opacity: 0;
+	width: 5%;
+	margin-left: 3.8vw;
+	transition: .3s ease;
+	z-index: 2;
+}
+
+.delbutton:hover
+{
+	opacity: 1;
+}
+
+.likebutton
+{
+	position: relative;
+	top : -9.2vw;
+	opacity: 0;
+	width: 5%;
+	margin-left: 3.8vw;
+	transition: .3s ease;
+	z-index: 2;
+}
+
+.likebutton:hover
+{
+	opacity: 1;
+}
+
+.gallery:hover + .likebutton
+{
+	opacity: 1;
+}
+
+.gallery:hover + .delbutton
+{
+	opacity: 1;
+}
+
+.galleryview
+{
+    background-color: white;
+    display: inline-block;
+	height: 85%;
+}

@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include 'include/webroot.php';
+
 ?>
 
 <html>
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	try
 	{
         $email = $_POST["Email"];
-		$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+		$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$req = $con->prepare("SELECT Username FROM users WHERE Email_addy = :email");
         $req->execute(array(':email' => $email));
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 ------------------------
 
                 Please click this link to reset your account password:
-                http://localhost:8080/'.WEBROOT.'/verify_password.php?email='.$email.'&confirmlink='.$confirmlink.'';
+                http://localhost/Camagru-/verify_password.php?email='.$email.'&confirmlink='.$confirmlink.'';
                 $headers = 'From:automsg@thegru.com' . "\r\n";
                 mail($to, $subject, $message, $headers);
                 $_SESSION['login_success'] = "Reset Email has been sent";

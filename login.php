@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	try
 	{
         $password = sha1($_POST['psw']);
-		$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+		$con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$req = $con->prepare("SELECT Username FROM users WHERE Username = :username AND Pass_word = :password AND verified = '1'");
 		$req->execute(array(
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			$_SESSION['LOGGED_ON'] = htmlentities($_POST['uname'], ENT_QUOTES, 'UTF-8');
 			try
 			{
-				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$req = $connection->prepare("SELECT userid FROM users where Username = :username");
 				$req->execute(array(
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			$_SESSION['ID'] = $id;
 			try
 			{
-				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$req = $connection->prepare("SELECT Comment_email FROM users where userid = :userid");
 				$req->execute(array(

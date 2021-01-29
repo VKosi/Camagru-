@@ -6,7 +6,7 @@
 		$username = $_GET['username'];
 	try
 	{
-		$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+		$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 		$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$update = $connection->prepare("UPDATE users SET Comment_email = '0' WHERE Username = :username");
 		$update->execute(array(

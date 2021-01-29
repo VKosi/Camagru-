@@ -1,5 +1,4 @@
 <?php 
-include('webroot.php');
 if(isset($_GET['confirmlink'])){
     $confirmlink = $_GET['confirmlink'];
 }
@@ -8,14 +7,14 @@ if(isset($_GET['email'])){
 }
 ?>
 <?php
-session_start();
+//session_start();
 if (isset($_GET['email']) && isset($_GET['confirmlink']))
 {
     $email = $_GET['email'];
     $confirmlink = $_GET['confirmlink'];
 	try
 	{
-        $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+        $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
         
 		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$request = $con->prepare("SELECT Email_addy, confirmlink, verified FROM users WHERE Email_addy = :email AND confirmlink = :confirmlink AND verified = '0'");
@@ -37,7 +36,7 @@ if (isset($_GET['email']) && isset($_GET['confirmlink']))
                 ':email' => $email,
                 ':confirmlink' => $confirmlink
             ));
-            $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+            $con = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $result = $con->query("SELECT Username, userid, Comment_email FROM users WHERE Email_addy = " . "'" . $email . "'");
@@ -54,7 +53,7 @@ if (isset($_GET['email']) && isset($_GET['confirmlink']))
     }
     echo "Activated Account. Proceed back to login Page .<br>This message will Self-Destruct in 5... 4...
      3... 2.. 1.";
-    header("Refresh:5; url=windowclose.php");
+    header("Refresh:20; url=windowclose.php");
     
 }
 else

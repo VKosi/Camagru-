@@ -65,7 +65,7 @@ require_once("config/setup.php");
 		{
 			try
 			{
-				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+				$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$req = $connection->prepare('SELECT link FROM images WHERE user_uploader = :id ORDER BY time_stamp DESC');
 				$req->execute(array(

@@ -18,7 +18,7 @@ if ($_SESSION['ID'] === $pic[0])
 
 	try
 	{
-		$connectionection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+		$connectionection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 		$connectionection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$req = $connectionection->prepare('DELETE FROM images WHERE link = :link');
 		$req->execute(array(

@@ -20,7 +20,7 @@
 		file_put_contents($filename, $filedata);
 		try
 		{
-			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "VuyoKosi");
+			$connection = new PDO("mysql:host=localhost;dbname=camagru2", "root", "000000");
 			$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$req = $connection->prepare('INSERT INTO images (username, time_stamp, link, user_uploader) VALUES (:username, NOW() , :link, :user_uploader)');
 			$req->execute(array(
