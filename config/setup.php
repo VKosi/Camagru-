@@ -55,7 +55,7 @@
                 $sql = "CREATE TABLE IF NOT EXISTS comments (
                 Commentator varchar(255) NOT NULL,
                 pict_id INT NOT NULL,
-                CommentID INT NOT NULL PRIMARY KEY,
+                CommentID AUTO_INCREMENT INT NOT NULL PRIMARY KEY,
                 Comment_time DATETIME NOT NULL,
                 Content TEXT NOT NULL
                 )";
@@ -75,7 +75,7 @@
                     $sql = "CREATE TABLE IF NOT EXISTS likes(
                     UserID varchar(100) NOT NULL,
                     pic_id varchar(100) NOT NULL,
-                    Like_id int(100) NOT NULL PRIMARY KEY
+                    Like_id int(100) AUTO_INCREMENT NOT NULL PRIMARY KEY
                     )";
                     $db->exec($sql);
                     //echo "table likes made ";
